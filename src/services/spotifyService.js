@@ -19,8 +19,7 @@ export async function getSpotifyToken() {
 
         let response = await fetch(URL_TOKEN_SERVICE, REQUEST_TOKEN);
         let jsonResponse = await response.json();
-        console.log(jsonResponse)
-        return jsonResponse;
+        return `${jsonResponse["token_type"]} ${jsonResponse["access_token"]}`;
 
     } catch (error) {
 
